@@ -4,7 +4,7 @@ import java.util.List;
 
 import br.com.ufc.si.modelo.Administrador;
 
-public interface AdminstradorDAO {
+public interface AdministradorDAO {
 	
 	public void salvar(Administrador administrador);
 	public void atualizar(Administrador administrador);
