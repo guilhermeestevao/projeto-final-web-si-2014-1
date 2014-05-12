@@ -8,7 +8,6 @@ import org.hibernate.Transaction;
 import br.com.caelum.vraptor.ioc.Component;
 import br.com.ufc.si.interfaces.AdministradorDAO;
 import br.com.ufc.si.modelo.Administrador;
-import br.com.ufc.si.modelo.Usuario;
 import br.com.ufc.si.util.HibernateUtil;
 
 @Component
