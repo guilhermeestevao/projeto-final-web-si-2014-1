@@ -23,7 +23,7 @@
 	<div id="body">
 		<div id="menu">
 			<ul> 
-   				 <li><a href="<c:url value="/administrador/novoAdminstrador "/>">Novo Administrador</a></li>
+   				 <li><a href="<c:url value="/administrador/novoAdministrador "/>">Novo Administrador</a></li>
 			</ul>
 			<ul> 
    				 <li><a href="<c:url value="/administrador/lista "/>">Ver administradores</a></li>

@@ -9,17 +9,17 @@ import br.com.ufc.si.modelo.Administrador;
 import br.com.ufc.si.util.HibernateUtil;
 
 @Resource
-public class AdminstradorController {
+public class AdministradorController {
 
 	private AdministradorDAOHibernate dao;
 	private Result result;
 
-	public AdminstradorController(AdministradorDAOHibernate dao, Result result){
+	public AdministradorController(AdministradorDAOHibernate dao, Result result){
 		this.result = result;
 		this.dao = dao;
 	}
 
-	public void novoAdminstrador() {/* ABRE O FORMULARIO */}
+	public void novoAdministrador() {/* ABRE O FORMULARIO */}
 
 	public List<Administrador> lista(){
 		return dao.listar();
