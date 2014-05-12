@@ -1,5 +1,8 @@
 package br.com.ufc.si.modelo;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -117,8 +120,15 @@ public abstract class Usuario {
 	public Date getNascimento() {
 		return nascimento;
 	}
-	public void setNascimento(Date nascimento) {
-		this.nascimento = nascimento;
+	public void setNascimento(String nascimento) {
+		Date date = null;
+		try {
+			date = new SimpleDateFormat("yyyy-MM-dd").parse(nascimento);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.nascimento = date;
 	}
 	
 }
