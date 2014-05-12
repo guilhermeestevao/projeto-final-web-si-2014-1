@@ -6,11 +6,12 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import br.com.caelum.vraptor.ioc.Component;
+import br.com.ufc.si.interfaces.AssistenteDAO;
 import br.com.ufc.si.modelo.Assistente;
 import br.com.ufc.si.util.HibernateUtil;
 
 @Component
-public class AssistenteDAOHibernate {
+public class AssistenteDAOHibernate implements AssistenteDAO{
 
 private Session session = HibernateUtil.getSessionFactory().openSession();
 	

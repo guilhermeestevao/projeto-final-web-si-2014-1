@@ -43,17 +43,14 @@
 			<label for="fone2">Fone 2:</label> 
 			<input id="fone2" type="text" name="cliente.fone2" /> 
 			
-			<label for="nascimento">Data de Nascimento:</label> 
-			<input id="nascimento" type="date" pattern="dd/mm/YYYY" name="cliente.nascimento" />
-			
 			<label for="sexo">Sexo:</label> 
 			Masculino <input id="sexo" type="radio" name="cliente.sexo" value="M" checked="checked"/> 
 			Feminino  <input id="sexo" type="radio" name="cliente.sexo" value="F" /> 
 			<br>
-			<!-- 	
+			
 			<label for="nascimento">Data de Nascimento:</label>
 			<input id="nascimento" type="date" name="usuario.nascimento"/>
-		-->
+		
 			<button type="submit">Enviar</button>
 			 
 		</fieldset>

@@ -48,10 +48,10 @@
 			Masculino <input id="sexo" type="radio" name="administrador.sexo" value="M" checked="checked"/> 
 			Feminino  <input id="sexo" type="radio" name="administrador.sexo" value="F" /> 
 			<br>
-			<!-- 	
+		
 			<label for="nascimento">Data de Nascimento:</label>
 			<input id="nascimento" type="date" name="usuario.nascimento"/>
-		-->
+		
 			<button type="submit">Enviar</button>
 			 
 		</fieldset>

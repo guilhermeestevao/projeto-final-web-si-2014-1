@@ -5,10 +5,11 @@ import java.util.List;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.ufc.si.dao.AssistenteDAOHibernate;
+import br.com.ufc.si.interfaces.AssistenteDAO;
 import br.com.ufc.si.modelo.Assistente;
 
 @Resource
-public class AssistenteController {
+public class AssistenteController{
 
 	private AssistenteDAOHibernate dao;
 	private Result result;
