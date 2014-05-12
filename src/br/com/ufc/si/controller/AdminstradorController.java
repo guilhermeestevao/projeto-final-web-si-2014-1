@@ -4,17 +4,17 @@ import java.util.List;
 
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
-import br.com.ufc.si.dao.AdminstradorDAOHibernate;
+import br.com.ufc.si.dao.AdministradorDAOHibernate;
 import br.com.ufc.si.modelo.Administrador;
 import br.com.ufc.si.util.HibernateUtil;
 
 @Resource
 public class AdminstradorController {
 
-	private AdminstradorDAOHibernate dao;
+	private AdministradorDAOHibernate dao;
 	private Result result;
 
-	public AdminstradorController(AdminstradorDAOHibernate dao, Result result){
+	public AdminstradorController(AdministradorDAOHibernate dao, Result result){
 		this.result = result;
 		this.dao = dao;
 	}
@@ -25,8 +25,8 @@ public class AdminstradorController {
 		return dao.listar();
 	}
 
-	public void adiciona(Administrador adminstrador){
-		dao.salvar(adminstrador);
+	public void adiciona(Administrador administrador){
+		dao.salvar(administrador);
 		result.redirectTo(this).lista();
 	}
 

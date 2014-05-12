@@ -23,10 +23,16 @@
 	<div id="body">
 		<div id="menu">
 			<ul> 
-   				 <li><a href="<c:url value="/adminstrador/novoAdminstrador "/>">Novo Adminstrador</a></li>
+   				 <li><a href="<c:url value="/administrador/novoAdminstrador "/>">Novo Administrador</a></li>
 			</ul>
 			<ul> 
-   				 <li><a href="<c:url value="/adminstrador/lista "/>">Ver administradores</a></li>
+   				 <li><a href="<c:url value="/administrador/lista "/>">Ver administradores</a></li>
+			</ul>
+			<ul> 
+   				 <li><a href="<c:url value="/assistente/novoAssistente "/>">Novo Assistente</a></li>
+			</ul>
+			<ul> 
+   				 <li><a href="<c:url value="/assistente/lista "/>">Ver assistente</a></li>
 			</ul>
 		</div>
 		<div id="content">

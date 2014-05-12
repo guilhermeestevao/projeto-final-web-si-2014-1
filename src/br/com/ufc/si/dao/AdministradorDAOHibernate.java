@@ -6,13 +6,13 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import br.com.caelum.vraptor.ioc.Component;
-import br.com.ufc.si.interfaces.AdminstradorDAO;
+import br.com.ufc.si.interfaces.AdministradorDAO;
 import br.com.ufc.si.modelo.Administrador;
 import br.com.ufc.si.modelo.Usuario;
 import br.com.ufc.si.util.HibernateUtil;
 
 @Component
-public class AdminstradorDAOHibernate implements AdminstradorDAO {
+public class AdministradorDAOHibernate implements AdministradorDAO {
 
 	private Session session = HibernateUtil.getSessionFactory().openSession();
 	

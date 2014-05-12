@@ -7,7 +7,7 @@
       postgres
     </property>
     <property name="hibernate.connection.password">
-    root
+      postgres
     </property>
     <property name="hibernate.connection.url">
       jdbc:postgresql://localhost/consultorio
