@@ -26,18 +26,19 @@ private Session session = HibernateUtil.getSessionFactory().openSession();
 	}
 
 	public void atualizar(Assistente assistente) {
-		// TODO Auto-generated method stub
-
+		Transaction tx = session.beginTransaction();
+		session.update(assistente);
+		tx.commit();
 	}
 
 	public void excluir(Assistente assistente) {
-		// TODO Auto-generated method stub
-
+		Transaction tx = session.beginTransaction();
+		session.delete(assistente);
+		tx.commit();
 	}
 
-	public Assistente carregar(Assistente assistente) {
-		// TODO Auto-generated method stub
-		return null;
+	public Assistente carregar(long id) {
+		return (Assistente) this.session.load(Assistente.class, id);
 	}
 
 	public Assistente buscarPorLogin(Assistente assistente) {

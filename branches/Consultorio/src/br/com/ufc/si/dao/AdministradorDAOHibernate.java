@@ -26,18 +26,19 @@ public class AdministradorDAOHibernate implements AdministradorDAO {
 	}
 
 	public void atualizar(Administrador administrador) {
-		// TODO Auto-generated method stub
-
+		Transaction tx = session.beginTransaction();
+		session.update(administrador);
+		tx.commit();
 	}
 
 	public void excluir(Administrador administrador) {
-		// TODO Auto-generated method stub
-
+		Transaction tx = session.beginTransaction();
+		session.delete(administrador);
+		tx.commit();
 	}
 
-	public Administrador carregar(Administrador administrador) {
-		// TODO Auto-generated method stub
-		return null;
+	public Administrador carregar(long id) {
+		return (Administrador)this.session.load(Administrador.class, id);
 	}
 
 	public Administrador buscarPorLogin(Administrador administrador) {

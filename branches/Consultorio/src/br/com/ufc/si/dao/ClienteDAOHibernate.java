@@ -27,18 +27,19 @@ public class ClienteDAOHibernate implements ClienteDAO {
 	}
 
 	public void atualizar(Cliente cliente) {
-		// TODO Auto-generated method stub
-
+		Transaction tx = session.beginTransaction();
+		session.update(cliente);
+		tx.commit();
 	}
 
 	public void excluir(Cliente cliente) {
-		// TODO Auto-generated method stub
-
+		Transaction tx = session.beginTransaction();
+		session.delete(cliente);
+		tx.commit();
 	}
 
-	public Cliente carregar(Cliente cliente) {
-		// TODO Auto-generated method stub
-		return null;
+	public Cliente carregar(long id) {
+		return (Cliente) this.session.load(Cliente.class, id) ;
 	}
 
 	public Cliente buscarPorLogin(Cliente cliente) {
