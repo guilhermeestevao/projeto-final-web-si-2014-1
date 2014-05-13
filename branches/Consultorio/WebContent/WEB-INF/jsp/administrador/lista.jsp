@@ -20,6 +20,8 @@
 				<tr>
 					<td>${administrador.nome}</td>
 					<td>${administrador.email}</td>
+					<td><a href="edita?id=${administrador.id}">Editar</a></td>
+					<td><a href="remove?id=${administrador.id}">Excluir</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

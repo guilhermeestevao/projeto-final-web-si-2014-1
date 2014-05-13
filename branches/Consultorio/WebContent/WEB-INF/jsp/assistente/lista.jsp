@@ -20,6 +20,8 @@
 				<tr>
 					<td>${assistente.nome}</td>
 					<td>${assistente.email}</td>
+					<td><a href="edita?id=${assistente.id}">Editar</a></td>
+					<td><a href="remove?id=${assistente.id}">Excluir</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
