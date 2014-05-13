@@ -13,21 +13,36 @@ public class AssistenteController{
 
 	private AssistenteDAOHibernate dao;
 	private Result result;
-	
+
 	public AssistenteController(AssistenteDAOHibernate dao, Result result){
 		this.result = result;
 		this.dao = dao;
 	}
-	
+
 	public void novoAssistente(){};
-	
+
 	public List<Assistente> lista(){
 		return dao.listar();
 	}
-	
+
 	public void adiciona(Assistente assistente){
 		dao.salvar(assistente);
 		result.redirectTo(this).lista();
 	}
-	
+
+	public void alterar(Assistente assistente){
+		dao.atualizar(assistente);
+		result.redirectTo(this).lista();
+	}
+
+	public Assistente edita(long id) {
+		return dao.carregar(id);
+	}
+
+	public void remove(long id) {
+		Assistente assistente = dao.carregar(id);
+		dao.excluir(assistente);
+		result.redirectTo(this).lista();
+	}
+
 }
