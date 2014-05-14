@@ -35,6 +35,12 @@
    				 <li><a href="<c:url value="/assistente/lista "/>">Ver assistente</a></li>
 			</ul>
 			<ul> 
+   				 <li><a href="<c:url value="/dentista/novoDentista"/>">Novo dentista</a></li>
+			</ul>
+			<ul> 
+   				 <li><a href="<c:url value="/dentista/lista"/>">Ver dentista</a></li>
+			</ul>
+			<ul> 
    				 <li><a href="<c:url value="/cliente/novoCliente"/>">Novo cliente</a></li>
 			</ul>
 			<ul> 

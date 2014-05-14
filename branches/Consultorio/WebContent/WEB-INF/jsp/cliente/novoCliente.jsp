@@ -12,7 +12,7 @@
 </head>
 <body>
 	
-		<form action="adiciona" method="get">
+		<form action="adiciona" method="post">
 		<fieldset>
 			<legend>Adicionar Novo Administrador</legend>
 			

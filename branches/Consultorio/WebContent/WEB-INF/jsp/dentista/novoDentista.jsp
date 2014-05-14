@@ -12,44 +12,54 @@
 </head>
 <body>
 	
-		<form action="adiciona" method="get">
+		<form action="adiciona" method="post">
 		<fieldset>
-			<legend>Adicionar Novo Administrador</legend>
+			<legend>Adicionar Novo Dentista</legend>
 			
 			<label for="nome">Nome:</label> 
-			<input id="nome" type="text" name="cliente.nome" /> 
+			<input id="nome" type="text" name="dentista.nome" /> 
 			
 			<label for="email">E-mail:</label> 
-			<input id="email" type="email" name="cliente.email" /> 
+			<input id="email" type="email" name="dentista.email" /> 
 			 
 			<label for="endereco">Endereço:</label> 
-			<input id="endereco" type="text" name="cliente.endereco" /> 
+			<input id="endereco" type="text" name="dentista.endereco" />
+			
+			<label for="endereco">CRO:</label> 
+			<input id="endereco" type="text" name="dentista.cro" /> 
 			
 			<label for="numero">Número:</label> 
-			<input id="numero" type="text" name="cliente.numero" /> 
+			<input id="numero" type="text" name="dentista.numero" /> 
 			
 			<label for="bairro">Bairro:</label> 
-			<input id="bairro" type="text" name="cliente.bairro" />
+			<input id="bairro" type="text" name="dentista.bairro" />
 			
 			<label for="cidade">Cidade:</label> 
-			<input id="cidade" type="text" name="cliente.cidade" /> 
+			<input id="cidade" type="text" name="dentista.cidade" /> 
 			
 			<label for="estado">Estado:</label> 
-			<input id="estado" type="text" name="cliente.estado" /> 
+			<input id="estado" type="text" name="dentista.estado" /> 
 			
 			<label for="fone1">Fone 1:</label> 
-			<input id="fone1" type="text" name="cliente.fone1" /> 
+			<input id="fone1" type="text" name="dentista.fone1" /> 
 			
 			<label for="fone2">Fone 2:</label> 
-			<input id="fone2" type="text" name="cliente.fone2" /> 
+			<input id="fone2" type="text" name="dentista.fone2" /> 
+			
+			<label for="assistente">Assistente:</label>   
+			<select id="assistente" name="dentista.assistente.id">
+				<c:forEach items="${assistente}" var="assistente">
+					<option value="${assistente.id}	">${assistente.nome}</option>
+				</c:forEach>
+			</select>
 			
 			<label for="sexo">Sexo:</label> 
-			Masculino <input id="sexo" type="radio" name="cliente.sexo" value="M" checked="checked"/> 
-			Feminino  <input id="sexo" type="radio" name="cliente.sexo" value="F" /> 
+			Masculino <input id="sexo" type="radio" name="dentista.sexo" value="M" checked="checked"/> 
+			Feminino  <input id="sexo" type="radio" name="dentista.sexo" value="F" /> 
 			<br>
 			
 			<label for="nascimento">Data de Nascimento:</label>
-			<input id="nascimento" type="date" name="usuario.nascimento"/>
+			<input id="nascimento" type="date" name="dentista.nascimento"/>
 		
 			<button type="submit">Enviar</button>
 			 
