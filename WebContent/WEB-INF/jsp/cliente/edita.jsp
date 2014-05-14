@@ -46,7 +46,7 @@
 			
 			
 			<c:choose>
-  				<c:when test="${assistente.sexo == 'M'}">
+  				<c:when test="${cliente.sexo == 'M'}">
     				Masculino <input id="sexo" type="radio" name="cliente.sexo" value="M" checked="checked"/>		
   					Feminino  <input id="sexo" type="radio" name="cliente.sexo" value="F" /> 
   				</c:when>

@@ -7,22 +7,22 @@ import javax.persistence.OneToOne;
 @Entity
 public class Dentista extends Usuario {
 	
-	private String CRO;
+	private String cro;
 	@OneToOne
-	@JoinColumn(name = "assitente_id")
-	private Assistente assitente;
+	@JoinColumn(name = "assistente_id")
+	private Assistente assistente;
 	
-	public String getCRO() {
-		return CRO;
+	public String getCro() {
+		return cro;
 	}
-	public void setCRO(String cRO) {
-		CRO = cRO;
+	public void setCro(String cro) {
+		this.cro = cro;
 	}
-	public Assistente getAssitente() {
-		return assitente;
+	public Assistente getAssistente() {
+		return assistente;
 	}
-	public void setAssitente(Assistente assitente) {
-		this.assitente = assitente;
+	public void setAssitente(Assistente assistente) {
+		this.assistente = assistente;
 	}
 	
 }

@@ -9,7 +9,7 @@ public interface DentistaDAO {
 	public void salvar(Dentista dentista);
 	public void atualizar(Dentista dentista);
 	public void excluir(Dentista dentista);
-	public Dentista carregar(Dentista dentista);
+	public Dentista carregar(long id);
 	public Dentista buscarPorLogin(Dentista dentista);
 	public List<Dentista> listar();
 	
