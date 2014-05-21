@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,12 +11,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<form action="alterar" method="post">
+	
+		<form action="adiciona" method="post">
 		<fieldset>
-			<legend>Editar dentista</legend>
-			
-			<label for="id">ID:</label> 
+			<legend>Adicionar Novo Dentista</legend>
 			<input id="id" type="hidden" name="dentista.id" value="${dentista.id}" /> 
 			
 			<label for="nome">Nome:</label> 
@@ -42,25 +44,32 @@
 			<label for="fone2">Fone 2:</label> 
 			<input id="fone2" type="text" name="dentista.fone2" value="${dentista.fone2}" /> 
 			
-			<label for="endereco">CRO:</label> 
-			<input id="endereco" type="text" name="dentista.cro" value="${dentista.cro}" /> 
+			<label for="cro">CRO:</label> 
+			<input id="cro" type="text" name="dentista.cro" value="${dentista.cro}" />
 			
-			<label for="fone2">Assistente:</label> 
+			<label for="assistente">Assistente:</label>   
 			<select id="assistente" name="dentista.assistente.id">
 				<c:forEach items="${assistente}" var="assistente">
-					<option value="${assistente.id}">${assistente.nome}</option>
+						<c:choose>
+							<c:when test="${dentista.assistente.id == assistente.id}">
+								<option value="${assistente.id}" selected="selected">${assistente.nome}</option>
+							</c:when>
+							<c:otherwise>
+								<option value="${assistente.id}">${assistente.nome}</option>
+							</c:otherwise>
+						</c:choose>
 				</c:forEach>
 			</select>
 			
 			<label for="sexo">Sexo:</label> 
 			<c:choose>
-  				<c:when test="${dentista.sexo == 'M'}">
-    				Masculino <input id="sexo" type="radio" name="dentista.sexo" value="M" checked="checked"/>		
-  					Feminino  <input id="sexo" type="radio" name="dentista.sexo" value="F" /> 
+  				<c:when test="${dentista.sexo == 'F'}">
+    				Masculino <input id="sexo" type="radio" name="dentista.sexo" value="M" />		
+  					Feminino  <input id="sexo" type="radio" name="dentista.sexo" value="F" checked="checked"/> 
   				</c:when>
   				<c:otherwise>
-  					Masculino <input id="sexo" type="radio" name="dentista.sexo" value="M"/>
-    				Feminino  <input id="sexo" type="radio" name="dentista.sexo" value="F" checked="checked"/> 		
+  					Masculino <input id="sexo" type="radio" name="dentista.sexo" value="M" checked="checked"/>
+    				Feminino  <input id="sexo" type="radio" name="dentista.sexo" value="F" /> 		
  			 	</c:otherwise>
 			</c:choose>
 			
@@ -68,11 +77,12 @@
 	
 			<label for="nascimento">Data de Nascimento:</label>
 			<input id="nascimento" type="date" name="dentista.nascimento" value="${dentista.nascimento}"/>
-		
+			
+			<br>
+			
 			<button type="submit">Enviar</button>
 			 
 		</fieldset>
 	</form>
-
 </body>
 </html>

@@ -23,19 +23,19 @@
 	<div id="body">
 		<div id="menu">
 			<ul> 
-   				 <li><a href="<c:url value="/administrador/novoAdministrador "/>">Novo Administrador</a></li>
+   				 <li><a href="<c:url value="/administrador/formAdministrador "/>">Novo Administrador</a></li>
 			</ul>
 			<ul> 
    				 <li><a href="<c:url value="/administrador/lista "/>">Ver administradores</a></li>
 			</ul>
 			<ul> 
-   				 <li><a href="<c:url value="/assistente/novoAssistente "/>">Novo Assistente</a></li>
+   				 <li><a href="<c:url value="/assistente/formAssistente "/>">Novo Assistente</a></li>
 			</ul>
 			<ul> 
    				 <li><a href="<c:url value="/assistente/lista "/>">Ver assistente</a></li>
 			</ul>
 			<ul> 
-   				 <li><a href="<c:url value="/dentista/novoDentista"/>">Novo dentista</a></li>
+   				 <li><a href="<c:url value="/dentista/formDentista"/>">Novo dentista</a></li>
 			</ul>
 			<ul> 
    				 <li><a href="<c:url value="/dentista/lista"/>">Ver dentista</a></li>

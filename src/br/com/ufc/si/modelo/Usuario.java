@@ -1,6 +1,5 @@
 package br.com.ufc.si.modelo;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -123,12 +122,23 @@ public abstract class Usuario {
 	public void setNascimento(String nascimento) {
 		Date date = null;
 		try {
-			date = new SimpleDateFormat("yyyy-MM-dd").parse(nascimento);
+			if(nascimento != null)
+				date = new SimpleDateFormat("yyyy-MM-dd").parse(nascimento);
+			else
+				date = null;
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		this.nascimento = date;
+	}
+	@Override
+	public String toString() {
+		return "Usuario [id=" + id + ", nome=" + nome + ", email=" + email
+				+ ", senha=" + senha + ", endereco=" + endereco + ", bairro="
+				+ bairro + ", numero=" + numero + ", cidade=" + cidade
+				+ ", estado=" + estado + ", fone1=" + fone1 + ", fone2="
+				+ fone2 + ", sexo=" + sexo + ", nascimento=" + nascimento + "]";
 	}
 	
 }

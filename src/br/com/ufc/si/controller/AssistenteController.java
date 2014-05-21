@@ -5,7 +5,6 @@ import java.util.List;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.ufc.si.dao.AssistenteDAOHibernate;
-import br.com.ufc.si.interfaces.AssistenteDAO;
 import br.com.ufc.si.modelo.Assistente;
 
 @Resource
@@ -19,24 +18,27 @@ public class AssistenteController{
 		this.dao = dao;
 	}
 
-	public void novoAssistente(){};
+	public void formAssistente(Long id){
+		Assistente assistente;
+		if(id != null){
+			assistente = dao.carregar(id);
+		}else{
+			assistente = null;
+		}
+		result.include("assistente", assistente);
+	};
 
 	public List<Assistente> lista(){
 		return dao.listar();
 	}
 
 	public void adiciona(Assistente assistente){
-		dao.salvar(assistente);
+		if(assistente.getId() != 0){
+			dao.atualizar(assistente);
+		}else{
+			dao.salvar(assistente);
+		}
 		result.redirectTo(this).lista();
-	}
-
-	public void alterar(Assistente assistente){
-		dao.atualizar(assistente);
-		result.redirectTo(this).lista();
-	}
-
-	public Assistente edita(long id) {
-		return dao.carregar(id);
 	}
 
 	public void remove(long id) {
