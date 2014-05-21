@@ -14,7 +14,7 @@ public class DentistaController {
 	private final DentistaDAOHibernate dao;
 	private final AssistenteDAOHibernate assistenteDao;
 	private final Result result;
-
+	
 	public DentistaController(DentistaDAOHibernate dao, Result result,
 			AssistenteDAOHibernate assistenteDao) {
 		this.result = result;
@@ -22,7 +22,14 @@ public class DentistaController {
 		this.assistenteDao = assistenteDao;
 	}
 
-	public void novoDentista() {
+	public void formDentista(Long id) {
+		Dentista dentista;
+		if(id != null){
+			dentista = dao.carregar(id);
+		}else{
+			dentista = new Dentista();
+		}
+		result.include("dentista", dentista);
 		result.include("assistente", assistenteDao.listar());
 		/* ABRE O FORMULARIO */
 	}
@@ -32,7 +39,11 @@ public class DentistaController {
 	}
 
 	public void adiciona(Dentista dentista) {
-		dao.salvar(dentista);
+		if(dentista.getId() != 0){
+			dao.atualizar(dentista);
+		}else{
+			dao.salvar(dentista);
+		}
 		result.redirectTo(this).lista();
 	}
 
@@ -42,12 +53,4 @@ public class DentistaController {
 		result.redirectTo(this).lista();
 	}
 
-	public void alterar(Dentista dentista) {
-		dao.atualizar(dentista);
-		result.redirectTo(this).lista();
-	}
-
-	public Dentista edita(long id) {
-		return dao.carregar(id);
-	}
 }

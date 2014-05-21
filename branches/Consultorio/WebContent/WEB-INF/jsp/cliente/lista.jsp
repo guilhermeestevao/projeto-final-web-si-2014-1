@@ -20,7 +20,7 @@
 				<tr>
 					<td>${cliente.nome}</td>
 					<td>${cliente.email}</td>
-					<td><a href="edita?id=${cliente.id}">Editar</a></td>
+					<td><a href="formCliente?id=${cliente.id}">Editar</a></td>
 					<td><a href="remove?id=${cliente.id}">Excluir</a></td>
 				</tr>
 			</c:forEach>

@@ -21,8 +21,14 @@ public class Dentista extends Usuario {
 	public Assistente getAssistente() {
 		return assistente;
 	}
-	public void setAssitente(Assistente assistente) {
+	public void setAssistente(Assistente assistente) {
 		this.assistente = assistente;
 	}
+	@Override
+	public String toString() {
+		return "Dentista [cro=" + cro + ", assistente=" + assistente + "]";
+	}
+	
+	
 	
 }

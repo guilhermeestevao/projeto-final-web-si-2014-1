@@ -5,7 +5,6 @@ import java.util.List;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.ufc.si.dao.ClienteDAOHibernate;
-import br.com.ufc.si.modelo.Administrador;
 import br.com.ufc.si.modelo.Cliente;
 
 @Resource
@@ -19,14 +18,26 @@ public class ClienteController {
 		this.dao = dao;
 	}
 
-	public void novoCliente() {/* ABRE O FORMULARIO */}
+	public void formCliente(Long id) {
+		Cliente cliente;
+		if(id != null){
+			cliente = dao.carregar(id);
+		}else{
+			cliente = null;
+		}
+		result.include("cliente", cliente);
+	}
 
 	public List<Cliente> lista(){
 		return dao.listar();
 	}
 
 	public void adiciona(Cliente cliente){
-		dao.salvar(cliente);
+		if(cliente.getId() != 0){
+			dao.atualizar(cliente);
+		}else{
+			dao.salvar(cliente);
+		}
 		result.redirectTo(this).lista();
 	}
 	
@@ -34,15 +45,6 @@ public class ClienteController {
 		Cliente cliente = dao.carregar(id);
 		dao.excluir(cliente);
 		result.redirectTo(this).lista();
-	}
-	
-	public void alterar(Cliente cliente){
-		dao.atualizar(cliente);
-		result.redirectTo(this).lista();
-	}
-
-	public Cliente edita(long id) {
-		return dao.carregar(id);
 	}
 
 }
