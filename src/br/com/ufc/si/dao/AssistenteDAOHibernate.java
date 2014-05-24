@@ -13,11 +13,11 @@ import br.com.ufc.si.util.HibernateUtil;
 @Component
 public class AssistenteDAOHibernate implements AssistenteDAO{
 
-private Session session = HibernateUtil.getSessionFactory().openSession();
+	private final Session session;
 	
-	public void setSession(Session session){
+	public AssistenteDAOHibernate(Session session){
 		this.session = session;
-	}
+	}	
 	
 	public void salvar(Assistente assistente) {
 		Transaction tx = session.beginTransaction();

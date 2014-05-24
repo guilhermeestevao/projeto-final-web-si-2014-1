@@ -14,7 +14,15 @@
 	
 <body>
 	<div id="header">
-		
+		 <div id="usuario">
+		 	<c:if test="${usuarioBean.logado}">
+      			Olá, ${usuarioBean.nome }! 
+      			<a href="<c:url value="/usuario/logout"/>">Logout</a>
+    		</c:if>
+    		 <c:if test="${empty usuarioBean or not usuarioBean.logado}">
+			    Você não está logado. <a href="<c:url value="/usuario/loginForm"/>"> Login </a>
+  			 </c:if	>
+  		</div>
 	</div>
 	<div id="erros">
 		<ul>
@@ -22,30 +30,27 @@
 	</div>
 	<div id="body">
 		<div id="menu">
-			<ul> 
+		<c:if test="${usuarioBean.logado}">
+			<ul>  
+			<c:if test="${usuarioBean.getInstanceof() == 'administrador'}">
    				 <li><a href="<c:url value="/administrador/formAdministrador "/>">Novo Administrador</a></li>
-			</ul>
-			<ul> 
+			 
    				 <li><a href="<c:url value="/administrador/lista "/>">Ver administradores</a></li>
-			</ul>
-			<ul> 
+			 
    				 <li><a href="<c:url value="/assistente/formAssistente "/>">Novo Assistente</a></li>
-			</ul>
-			<ul> 
+			 
    				 <li><a href="<c:url value="/assistente/lista "/>">Ver assistente</a></li>
-			</ul>
-			<ul> 
+			 
    				 <li><a href="<c:url value="/dentista/formDentista"/>">Novo dentista</a></li>
-			</ul>
-			<ul> 
+			 
    				 <li><a href="<c:url value="/dentista/lista"/>">Ver dentista</a></li>
-			</ul>
-			<ul> 
+				<c:if test="${usuarioBean.getInstanceof() == 'assistente'}">
    				 <li><a href="<c:url value="/cliente/novoCliente"/>">Novo cliente</a></li>
-			</ul>
-			<ul> 
+			 
    				 <li><a href="<c:url value="/cliente/lista"/>">Ver clientes</a></li>
+   				 </c:if>
+				</c:if>
 			</ul>
+		</c:if>
 		</div>
 		<div id="content">
-		
