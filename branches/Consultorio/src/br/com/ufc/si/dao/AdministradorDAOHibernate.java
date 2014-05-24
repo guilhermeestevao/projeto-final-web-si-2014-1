@@ -13,9 +13,9 @@ import br.com.ufc.si.util.HibernateUtil;
 @Component
 public class AdministradorDAOHibernate implements AdministradorDAO {
 
-	private Session session = HibernateUtil.getSessionFactory().openSession();
+	private final Session session;
 	
-	public void setSession(Session session){
+	public AdministradorDAOHibernate(Session session){
 		this.session = session;
 	}
 	

@@ -14,9 +14,9 @@ import br.com.ufc.si.util.HibernateUtil;
 @Component
 public class ClienteDAOHibernate implements ClienteDAO {
 	
-	private Session session = HibernateUtil.getSessionFactory().openSession();
+	private final Session session;
 	
-	public void setSession(Session session){
+	public ClienteDAOHibernate(Session session){
 		this.session = session;
 	}
 	

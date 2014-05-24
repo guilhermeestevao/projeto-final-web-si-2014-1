@@ -6,5 +6,6 @@
 </head>
 <body>
 	It works!! ${variable} ${linkTo[IndexController].index}
+
 </body>
 </html>

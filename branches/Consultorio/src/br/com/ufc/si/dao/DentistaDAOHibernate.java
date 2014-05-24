@@ -15,9 +15,9 @@ import br.com.ufc.si.util.HibernateUtil;
 @Component
 public class DentistaDAOHibernate implements DentistaDAO{
 
-private Session session = HibernateUtil.getSessionFactory().openSession();
+	private final Session session;
 	
-	public void setSession(Session session){
+	public DentistaDAOHibernate(Session session){
 		this.session = session;
 	}
 	
