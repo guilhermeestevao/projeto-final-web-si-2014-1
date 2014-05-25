@@ -44,13 +44,15 @@
    				 <li><a href="<c:url value="/dentista/formDentista"/>">Novo dentista</a></li>
 			 
    				 <li><a href="<c:url value="/dentista/lista"/>">Ver dentista</a></li>
-				<c:if test="${usuarioBean.getInstanceof() == 'assistente'}">
-   				 <li><a href="<c:url value="/cliente/novoCliente"/>">Novo cliente</a></li>
-			 
-   				 <li><a href="<c:url value="/cliente/lista"/>">Ver clientes</a></li>
-   				 </c:if>
+				
 				</c:if>
-			</ul>
+				<c:if test="${usuarioBean.getInstanceof() == 'assistente'}">
+   				 	<li><a href="<c:url value="/cliente/formCliente"/>">Novo cliente</a></li>
+   				 	<li><a href="<c:url value="/cliente/lista"/>">Ver clientes</a></li>
+   				 	<li><a href="<c:url value="/procedimento/formProcedimento"/>">Novo Procedimento</a></li>
+   				 	<li><a href="<c:url value="/procedimento/lista"/>">Procedimentos Cadastrados</a></li>
+   				 </c:if>
+			</ul>	
 		</c:if>
 		</div>
 		<div id="content">

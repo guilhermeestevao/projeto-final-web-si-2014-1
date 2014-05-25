@@ -16,10 +16,9 @@ public class Procedimento {
 	private String nome;
 	@Column(length=100)
 	private String descricao;
-	@Column
-	private int tempomedio;
-	@Column
-	private int tempo;
+	@Column(name="tempo_medio")
+	private String tempoMedio;
+
 	
 	public long getId() {
 		return id;
@@ -45,21 +44,12 @@ public class Procedimento {
 		this.descricao = descricao;
 	}
 	
-	public int getTempomedio() {
-		return tempomedio;
+	public String getTempoMedio() {
+		return tempoMedio;
 	}
 	
-	public void setTempomedio(int tempomedio) {
-		this.tempomedio = tempomedio;
+	public void setTempoMedio(String tempoMedio) {
+		this.tempoMedio = tempoMedio;
 	}
-	
-	public int getTempo() {
-		return tempo;
-	}
-	
-	public void setTempo(int tempo) {
-		this.tempo = tempo;
-	}
-	
 	
 }
