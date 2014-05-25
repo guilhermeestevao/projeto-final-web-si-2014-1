@@ -7,7 +7,7 @@
       postgres
     </property>
     <property name="hibernate.connection.password">
-      postgres
+      root
     </property>
     <property name="hibernate.connection.url">
       jdbc:postgresql://localhost/consultorio
@@ -28,6 +28,6 @@
     <mapping class="br.com.ufc.si.modelo.Administrador" />
     <mapping class="br.com.ufc.si.modelo.Dentista" />
     <mapping class="br.com.ufc.si.modelo.Assistente" />
-  
+  	<mapping class="br.com.ufc.si.modelo.Procedimento" />
   </session-factory>
 </hibernate-configuration>

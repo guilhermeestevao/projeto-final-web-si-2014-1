@@ -18,6 +18,12 @@ public class AssistenteController{
 		this.dao = dao;
 	}
 
+	public void novaConsulta(){
+		// abre o formulario para marcar nova consulta
+	}
+	
+	
+	
 	public void formAssistente(Long id){
 		Assistente assistente;
 		if(id != null){
