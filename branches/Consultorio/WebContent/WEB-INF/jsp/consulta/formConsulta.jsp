@@ -8,7 +8,21 @@
 </head>
 <body>
 
-	formconsulta
+	<form action="adiciona" method="post">
+	
+		<fieldset>
+			<legend>Marcar consulta</legend>
+			<input id="id" type="hidden" name="consulta.id" value="${consulta.id}" /> 
+			
+			<label for="nome">Pasciente:</label> 
+			<input id="nome" type="text" name="cliente.nome" value="${consulta.cliente}"  /> 
+			
+			<br>
+			
+			<button type="submit">Enviar</button>
+		</fieldset>
+	
+	</form>
 
 </body>
 </html>
