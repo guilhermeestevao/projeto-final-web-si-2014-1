@@ -8,6 +8,7 @@ import br.com.ufc.si.dao.ClienteDAOHibernate;
 import br.com.ufc.si.dao.ConsultaDAOHibernate;
 import br.com.ufc.si.dao.DentistaDAOHibernate;
 import br.com.ufc.si.dao.ProcedimentoDAOHibernate;
+import br.com.ufc.si.modelo.Cliente;
 import br.com.ufc.si.modelo.Consulta;
 
 @Resource
@@ -30,7 +31,11 @@ public class ConsultaController {
 		this.daoProcedimento = daoProcedimento;
 		this.daoCliente = daoCliente;
 	}
-	
+
+	public List<Cliente> busca(String nome) {
+		return daoCliente.buscarPorNome(nome);
+	}
+
 	public void formConsulta(Long id){
 		Consulta consulta;
 		if(id != null){

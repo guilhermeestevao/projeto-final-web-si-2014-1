@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.MatchMode;
+import org.hibernate.criterion.Restrictions;
 
 import br.com.caelum.vraptor.ioc.Component;
 import br.com.ufc.si.interfaces.ClienteDAO;
@@ -49,6 +51,13 @@ public class ClienteDAOHibernate implements ClienteDAO {
 
 	public List<Cliente> listar() {
 		return this.session.createCriteria(Cliente.class).list();
+	}
+
+	public List<Cliente> buscarPorNome(String nome) {
+		// TODO Auto-generated method stub
+		return session.createCriteria(Cliente.class)
+			      .add(Restrictions.ilike("nome", nome, MatchMode.ANYWHERE))
+			      .list();
 	}
 
 }
