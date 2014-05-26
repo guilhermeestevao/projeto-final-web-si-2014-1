@@ -51,6 +51,8 @@
    				 	<li><a href="<c:url value="/cliente/lista"/>">Ver clientes</a></li>
    				 	<li><a href="<c:url value="/procedimento/formProcedimento"/>">Novo Procedimento</a></li>
    				 	<li><a href="<c:url value="/procedimento/lista"/>">Procedimentos Cadastrados</a></li>
+   				 	<li><a href="<c:url value="/consulta/formConsulta"/>">Marcar consulta</a></li>
+   				 	<li><a href="<c:url value="/consulta/lista"/>">Consultas marcadas</a></li>
    				 </c:if>
 			</ul>	
 		</c:if>

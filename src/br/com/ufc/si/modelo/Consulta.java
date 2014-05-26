@@ -31,10 +31,7 @@ public class Consulta {
 	private Cliente cliente;
 	@Column(name="horario_inicial")
 	@Temporal(TemporalType.TIME)
-	private Date horarioInicial;
-	@Column(name="horario_final")
-	@Temporal(TemporalType.TIME)
-	private Date horarioFinal;
+	private Date hora;
 	@Temporal(TemporalType.DATE)
 	private Date dia;
 	
@@ -70,22 +67,14 @@ public class Consulta {
 		this.cliente = cliente;
 	}
 	
-	public Date getHorarioInicial() {
-		return horarioInicial;
+	public Date getHora() {
+		return hora;
 	}
-	
-	public void setHorarioInicial(Date horarioInicial) {
-		this.horarioInicial = horarioInicial;
+
+	public void setHora(Date hora) {
+		this.hora = hora;
 	}
-	
-	public Date getHorarioFinal() {
-		return horarioFinal;
-	}
-	
-	public void setHorarioFinal(Date horarioFinal) {
-		this.horarioFinal = horarioFinal;
-	}
-	
+
 	public Date getDia() {
 		return dia;
 	}
@@ -93,7 +82,5 @@ public class Consulta {
 	public void setDia(Date dia) {
 		this.dia = dia;
 	}
-	
-	
-	
+
 }
