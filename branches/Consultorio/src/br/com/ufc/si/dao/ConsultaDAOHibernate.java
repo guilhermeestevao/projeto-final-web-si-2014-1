@@ -5,9 +5,11 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import br.com.caelum.vraptor.ioc.Component;
 import br.com.ufc.si.interfaces.ConsultaDAO;
 import br.com.ufc.si.modelo.Consulta;
 
+@Component
 public class ConsultaDAOHibernate implements ConsultaDAO {
 	
 	private final Session session;
