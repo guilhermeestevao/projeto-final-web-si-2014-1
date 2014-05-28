@@ -43,7 +43,9 @@ public class ConsultaController {
 		}else{
 			consulta = new Consulta();
 		}
-		
+		result.include("dentista", daoDentista.listar());
+		result.include("cliente", daoCliente.listar());
+		result.include("procedimento", daoProcedimento.listar());
 		result.include("consulta", consulta);
 	}
 	

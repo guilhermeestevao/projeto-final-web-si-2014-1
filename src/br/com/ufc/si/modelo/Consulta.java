@@ -1,14 +1,13 @@
 package br.com.ufc.si.modelo;
 
-import java.lang.annotation.Inherited;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -79,8 +78,18 @@ public class Consulta {
 		return dia;
 	}
 	
-	public void setDia(Date dia) {
-		this.dia = dia;
+	public void setDia(String dia) {
+		Date date = null;
+		try {
+			if(dia!= null)
+				date = new SimpleDateFormat("yyyy-MM-dd").parse(dia);
+			else
+				date = null;
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.dia = date;
 	}
 
 }
