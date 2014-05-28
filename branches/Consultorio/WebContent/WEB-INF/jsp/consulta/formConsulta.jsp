@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -14,9 +14,49 @@
 			<legend>Marcar consulta</legend>
 			<input id="id" type="hidden" name="consulta.id" value="${consulta.id}" /> 
 			
-			<label for="nome">Pasciente:</label> 
-			<input id="nome" type="text" name="cliente.nome" value="${consulta.cliente}"  /> 
-			
+			<label for="cliente">Paciente:</label> 
+			<select id="cliente" name="consulta.cliente.id">
+				<c:forEach items="${cliente}" var="cliente">
+						<c:choose>
+							<c:when test="${consulta.cliente.id == cliente.id}">
+								<option value="${cliente.id}" selected="selected">${cliente.nome}</option>
+							</c:when>
+							<c:otherwise>
+								<option value="${cliente.id}">${cliente.nome}</option>
+							</c:otherwise>
+						</c:choose>
+				</c:forEach>
+			</select> 
+			<label for="dentista">Dentista:</label> 
+			<select id="dentista" name="consulta.dentista.id">
+				<c:forEach items="${dentista}" var="dentista">
+						<c:choose>
+							<c:when test="${consulta.dentista.id == dentista.id}">
+								<option value="${dentista.id}" selected="selected">${dentista.nome}</option>
+							</c:when>
+							<c:otherwise>
+								<option value="${dentista.id}">${dentista.nome}</option>
+							</c:otherwise>
+						</c:choose>
+				</c:forEach>
+			</select>
+			<label for="procedimento">Procedimento:</label> 
+			<select id="procedimento" name="consulta.procedimento.id">
+				<c:forEach items="${procedimento}" var="procedimento">
+						<c:choose>
+							<c:when test="${consulta.procedimento.id == procedimento.id}">
+								<option value="${procedimento.id}" selected="selected">${procedimento.nome}</option>
+							</c:when>
+							<c:otherwise>
+								<option value="${procedimento.id}">${procedimento.nome}</option>
+							</c:otherwise>
+						</c:choose>
+				</c:forEach>
+			</select>
+			<label for="hora">Horário da consulta:</label> 
+			<input id="hora" type="time" name="consulta.hora" value="${consulta.hora}"  />
+			<label for="dia">Dia da consulta:</label> 
+			<input id="dia" type="date" name="consulta.dia" value="${consulta.dia}"/>
 			<br>
 			
 			<button type="submit">Enviar</button>
