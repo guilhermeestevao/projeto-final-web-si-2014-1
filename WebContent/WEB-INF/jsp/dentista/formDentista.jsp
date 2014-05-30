@@ -23,6 +23,10 @@
 			<label for="email">E-mail:</label> 
 			<input id="email" type="email" name="dentista.email" value="${dentista.email}" /> 
 			 
+			<label for="senha">Senha:</label> 
+			<input id="senha" type="password" name="dentista.senha" value="${dentista.senha}" />
+		 
+			 
 			<label for="endereco">Endereço:</label> 
 			<input id="endereco" type="text" name="dentista.endereco" value="${dentista.endereco}"/> 
 			
