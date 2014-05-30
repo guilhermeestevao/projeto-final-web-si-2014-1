@@ -8,6 +8,8 @@
 </head>
 <body>
 
+	Seu id é ${usuarioBean.id}
+	
 	<form action="adiciona" method="post">
 	
 		<fieldset>
