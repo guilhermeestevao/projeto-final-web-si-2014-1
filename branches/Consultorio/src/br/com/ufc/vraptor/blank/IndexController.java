@@ -16,22 +16,33 @@
  */
 package br.com.ufc.vraptor.blank;
 
+import java.util.List;
+
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
+import br.com.ufc.si.dao.DentistaDAOHibernate;
+import br.com.ufc.si.modelo.Dentista;
 
 @Resource
 public class IndexController {
 
 	private final Result result;
+	private final DentistaDAOHibernate dao;
 
-	public IndexController(Result result) {
+	public IndexController(Result result, DentistaDAOHibernate dao) {
 		this.result = result;
+		this.dao = dao;
 	}
 
 	@Path("/")
 	public void index() {
-		result.include("variable", "VRaptor!");
+		lista();
 	}
+	
+	public List<Dentista> lista() {
+		return dao.listar();
+	}
+
 
 }
