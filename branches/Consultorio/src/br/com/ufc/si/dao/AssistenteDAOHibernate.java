@@ -2,12 +2,18 @@ package br.com.ufc.si.dao;
 
 import java.util.List;
 
+import javax.persistence.Query;
+
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Restrictions;
 
 import br.com.caelum.vraptor.ioc.Component;
 import br.com.ufc.si.interfaces.AssistenteDAO;
 import br.com.ufc.si.modelo.Assistente;
+import br.com.ufc.si.modelo.Dentista;
 import br.com.ufc.si.util.HibernateUtil;
 
 @Component

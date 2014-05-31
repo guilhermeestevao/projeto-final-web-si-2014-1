@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	Seu id é ${usuarioBean.id}
 	
 	<form action="adiciona" method="post">
 	
