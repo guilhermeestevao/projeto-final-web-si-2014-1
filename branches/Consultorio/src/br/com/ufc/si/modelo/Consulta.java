@@ -29,8 +29,7 @@ public class Consulta {
 	@JoinColumn(name = "cliente_id")
 	private Cliente cliente;
 	@Column(name="horario_inicial")
-	@Temporal(TemporalType.TIME)
-	private Date hora;
+	private String hora;
 	@Temporal(TemporalType.DATE)
 	private Date dia;
 	
@@ -66,11 +65,11 @@ public class Consulta {
 		this.cliente = cliente;
 	}
 	
-	public Date getHora() {
+	public String getHora() {
 		return hora;
 	}
 
-	public void setHora(Date hora) {
+	public void setHora(String hora) {
 		this.hora = hora;
 	}
 
