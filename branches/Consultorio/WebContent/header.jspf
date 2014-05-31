@@ -55,12 +55,9 @@
    				 	<li><a href="<c:url value="/consulta/lista"/>">Consultas marcadas</a></li>
    				 </c:if>
    				 <c:if test="${usuarioBean.getInstanceof() == 'dentista'}">
-   				 	<li><a href="<c:url value="/cliente/formCliente"/>">Consultas de Hoje</a></li>
-   				 	<li><a href="<c:url value="/cliente/lista"/>">Consultas da Semana</a></li>
-   				 	<li><a href="<c:url value="/procedimento/formProcedimento"/>">Consultas de Mês</a></li>
-   				 	<li><a href="<c:url value="/procedimento/lista"/>">Consultas por filtro de tempo</a></li>
+   				 	<li><a href="<c:url value="/consulta/consultasDoDia"/>">Consultas de Hoje</a></li>
+   				 	<li><a href="<c:url value="/consulta/filtroConsulta "/>">Consultas por filtro de tempo</a></li>
    				 </c:if>
-   				 
 			</ul>	
 		</c:if>
 		</div>

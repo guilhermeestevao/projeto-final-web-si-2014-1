@@ -91,4 +91,13 @@ public class Consulta {
 		this.dia = date;
 	}
 
+	@Override
+	public String toString() {
+		return "Consulta [id=" + id + ", dentista=" + dentista
+				+ ", procedimento=" + procedimento + ", cliente=" + cliente
+				+ ", hora=" + hora + ", dia=" + dia + "]";
+	}
+	
+	
+
 }

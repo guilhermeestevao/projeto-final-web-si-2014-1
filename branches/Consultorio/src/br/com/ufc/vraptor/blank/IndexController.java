@@ -36,13 +36,13 @@ public class IndexController {
 	}
 
 	@Path("/")
-	public void index() {
-		lista();
+	public List<Dentista> index() {
+		return lista();
 	}
 	
 	public List<Dentista> lista() {
 		return dao.listar();
 	}
-
+	
 
 }
