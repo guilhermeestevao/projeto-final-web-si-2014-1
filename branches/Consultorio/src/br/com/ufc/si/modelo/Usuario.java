@@ -7,6 +7,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -17,7 +18,7 @@ import javax.persistence.TemporalType;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Usuario {
 	
-	@Id @GeneratedValue
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	@Column(length=100)
 	private String nome;
