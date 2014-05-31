@@ -1,5 +1,6 @@
 package br.com.ufc.si.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import br.com.caelum.vraptor.Resource;
@@ -69,4 +70,17 @@ public class ConsultaController {
 		dao.excluir(consulta);
 		result.redirectTo(this).lista();
 	}
+	
+	public List<Consulta> consultasDoDia(){
+		return dao.consultasDoDia();
+	}
+	
+	public void filtroConsulta(){		 
+		
+	}
+	
+	public List<Consulta> filtroConsultaResult(String inicio, String fim){
+		return dao.consultasDoDia(inicio, fim);
+	}
+	
 }
