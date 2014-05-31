@@ -39,6 +39,11 @@ public class UsuarioBean {
 	 public void logout() {
 		 this.logado = null;
 	 }
+	 
+	 public Dentista getDentista(){
+		 Assistente ass = (Assistente) logado;
+		 return ass.getDentista();
+	 }
 
 
 }

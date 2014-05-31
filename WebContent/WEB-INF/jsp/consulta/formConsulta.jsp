@@ -27,7 +27,12 @@
 						</c:choose>
 				</c:forEach>
 			</select> 
+			
 			<label for="dentista">Dentista:</label> 
+			${usuarioBean.dentista.nome}
+			<input id="dentista" type="hidden" name="consulta.dentista.id" value="${usuarioBean.dentista.id}" />
+			
+			<!--  
 			<select id="dentista" name="consulta.dentista.id">
 				<c:forEach items="${dentista}" var="dentista">
 						<c:choose>
@@ -40,6 +45,7 @@
 						</c:choose>
 				</c:forEach>
 			</select>
+			-->
 			<label for="procedimento">Procedimento:</label> 
 			<select id="procedimento" name="consulta.procedimento.id">
 				<c:forEach items="${procedimento}" var="procedimento">
