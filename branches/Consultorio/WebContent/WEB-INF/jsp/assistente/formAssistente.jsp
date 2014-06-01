@@ -8,64 +8,101 @@
 </head>
 <body>
 
-	<form action="adiciona" method="post">
-		<fieldset>
-			<legend>Adicionar Novo Administrador</legend>
-			
-			<input id="nome" type="hidden" name="assistente.id" value="${assistente.id}" /> 
-			
-			<label for="nome">Nome:</label> 
-			<input id="nome" type="text" name="assistente.nome" value="${assistente.nome}"  /> 
-			
-			<label for="email">E-mail:</label> 
-			<input id="email" type="email" name="assistente.email" value="${assistente.email}" /> 
-			 
-			<label for="senha">Senha:</label> 
-			<input id="senha" type="password" name="assistente.senha" value="${assistente.senha}" />
-		 
-			<label for="endereco">Endereço:</label> 
-			<input id="endereco" type="text" name="assistente.endereco" value="${assistente.endereco}"/> 
-			
-			<label for="numero">Número:</label> 
-			<input id="numero" type="text" name="assistente.numero" value="${assistente.numero}" /> 
-			
-			<label for="bairro">Bairro:</label> 
-			<input id="bairro" type="text" name="assistente.bairro" value="${assistente.bairro}" />
-			
-			<label for="cidade">Cidade:</label> 
-			<input id="cidade" type="text" name="assistente.cidade" value="${assistente.cidade}" /> 
-			
-			<label for="estado">Estado:</label> 
-			<input id="estado" type="text" name="assistente.estado" value="${assistente.estado}" /> 
-			
-			<label for="fone1">Fone 1:</label> 
-			<input id="fone1" type="text" name="assistente.fone1" value="${assistente.fone1}" /> 
-			
-			<label for="fone2">Fone 2:</label> 
-			<input id="fone2" type="text" name="assistente.fone2" value="${assistente.fone2}" /> 
-			
-			<label for="sexo">Sexo:</label> 
-			
-			
-			<c:choose>
-  				<c:when test="${assistente.sexo == 'F'}">
-    				Masculino <input id="sexo" type="radio" name="assistente.sexo" value="M" />		
-  					Feminino  <input id="sexo" type="radio" name="assistente.sexo" value="F" checked="checked"/> 
-  				</c:when>
-  				<c:otherwise>
-  					Masculino <input id="sexo" type="radio" name="assistente.sexo" value="M" checked="checked"/>
-    				Feminino  <input id="sexo" type="radio" name="assistente.sexo" value="F" /> 		
- 			 	</c:otherwise>
-			</c:choose>
-			
-			<br>
-	
-			<label for="nascimento">Data de Nascimento:</label>
-			<input id="nascimento" type="date" name="assistente.nascimento" value="${assistente.nascimento}"/>
+	<h1 style="text-align: center; margin-bottom: 30px;">Adicionar Novo Assistente</h1>	
 		
-			<button type="submit">Enviar</button>
-			 
-		</fieldset>
+		<form class="form-horizontal" role="form" action="adiciona" method="post" 
+			style="width: 90%; margin-left: 5%">
+			<input id="id" type="hidden" name="assistente.id" value="${assistente.id}" /> 
+			<div class="form-group">
+				<label for="nome" class="col-sm-1 control-label">Nome:</label> 
+				<div class="col-sm-3">
+					<input id="nome" type="text" name="assistente.nome"
+						class="form-control" value="${assistente.nome}"  /> 
+				</div>
+			
+				<label for="email" class="col-sm-1 control-label">E-mail:</label> 
+				<div class="col-sm-3">
+					<input id="email" type="email" name="assistente.email"
+						class="form-control" value="${assistente.email}" /> 
+				</div>
+			
+				<label for="senha" class="col-sm-1 control-label">Senha:</label> 
+				<div class="col-sm-2">
+					<input id="senha" type="password" name="assistente.senha" 
+						class="form-control" value="${assistente.senha}" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="endereco" class="col-sm-1 control-label">Endereço:</label> 
+				<div class="col-sm-3">
+					<input id="endereco" type="text" name="assistente.endereco" 
+						class="form-control" value="${assistente.endereco}"/> 
+				</div>
+				<label for="numero" class="col-sm-1 control-label">Número:</label> 
+				<div class="col-sm-1">
+					<input id="numero" type="text" name="assistente.numero" 
+						class="form-control" value="${assistente.numero}" /> 
+				</div>
+				<label for="bairro" class="col-sm-1 control-label">Bairro:</label> 
+				<div class="col-sm-3">
+					<input id="bairro" type="text" name="assistente.bairro"
+						class="form-control" value="${assistente.bairro}" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="cidade" class="col-sm-1 control-label">Cidade:</label> 
+				<div class="col-sm-2">
+					<input id="cidade" type="text" name="assistente.cidade"
+						class="form-control" value="${assistente.cidade}" /> 
+				</div>
+				<label for="estado" class="col-sm-1 control-label">Estado:</label> 
+				<div class="col-sm-2">	
+					<input id="estado" type="text" name="assistente.estado"
+						class="form-control" value="${assistente.estado}" /> 
+				</div>
+				<label for="sexo" class="col-sm-1 control-label">Sexo:</label> 	
+				<c:choose>
+  					<c:when test="${assistente.sexo == 'F'}">
+    					<label class="radio-inline">
+    						<input id="sexo" type="radio" name="assistente.sexo" value="M" /> Masculino
+    					</label>
+    					<label class="radio-inline">
+  							<input id="sexo" type="radio" name="assistente.sexo" value="F" checked="checked"/> Feminino 
+  						</label>
+  					</c:when>
+  					<c:otherwise>
+  						<label class="radio-inline">
+  							<input id="sexo" type="radio" name="assistente.sexo" value="M" checked="checked"/> Masculino 
+    					</label>
+    					<label class="radio-inline">
+    						<input id="sexo" type="radio" name="assistente.sexo" value="F" /> Feminino   		
+ 			 			</label>
+ 			 		</c:otherwise>
+				</c:choose>
+			</div>
+			<div class="form-group">
+				<label for="fone1" class="col-sm-1 control-label">Fone 1:</label> 
+				<div class="col-sm-2">
+					<input id="fone1" type="text" name="assistente.fone1" 
+						class="form-control" value="${assistente.fone1}" /> 
+				</div>
+				<label for="fone2" class="col-sm-1 control-label">Fone 2:</label> 
+				<div class="col-sm-2">
+					<input id="fone2" type="text" name="assistente.fone2" 
+						class="form-control" value="${assistente.fone2}" /> 
+				</div>
+				<label for="nascimento" class="col-sm-2 control-label">Data de Nascimento:</label>
+				<div class="col-sm-2">	
+					<input id="nascimento" type="date" name="assistente.nascimento" 
+						class="form-control" value="${assistente.nascimento}"/>
+				</div>
+			</div>
+			<div class="form-group">
+    			<div class="col-sm-offset-5">
+					<button type="submit" class="btn btn-success" 
+						style="padding-left: 30px; padding-right: 30px;">Enviar</button>
+				</div>
+			</div>				 
 	</form>
 	
 </body>

@@ -8,24 +8,37 @@
 </head>
 <body>
 
-	<form action="adiciona" method="post">
-		<fieldset>
-			<legend>Cadastro de procedimento</legend>
-			
-			<input id="nome" type="hidden" name="procedimento.id" value="${procedimento.id}" /> 
-			
-			<label for="nome">Nome:</label> 
-			<input id="nome" type="text" name="procedimento.nome" value="${procedimento.nome}"  /> 
+	<h1 style="text-align: center; margin-bottom: 30px;">Adicionar Novo Procedimento</h1>	
 		
-			<label for="descricao">Descrição:</label>
-     		<textarea id="descricao" name="procedimento.descricao">${procedimento.descricao}</textarea>
-		
-			<label for="nome">Tempo médio para o procedimento:</label> 
-			<input id="nome" type="time" name="procedimento.tempoMedio" value="${procedimento.tempoMedio}"  /> 
-			
-			<button type="submit">Enviar</button>
-			
-		</fieldset>
+	<form class="form-horizontal" role="form" action="adiciona" method="post"
+		style="width: 90%; margin-left: 5%">
+		<input id="nome" type="hidden" name="procedimento.id" value="${procedimento.id}" /> 
+		<div class="form-group">	
+			<label for="nome" class="col-sm-1 control-label">Nome:</label> 
+			<div class="col-sm-3">	
+				<input id="nome" type="text" name="procedimento.nome" 
+					class="form-control" value="${procedimento.nome}"  /> 
+			</div>
+			<label for="nome" class="col-sm-3 control-label">Tempo médio para o procedimento:</label> 
+			<div class="col-sm-2">
+				<input id="nome" type="time" name="procedimento.tempoMedio" 
+					class="form-control" value="${procedimento.tempoMedio}"  /> 
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="descricao" class="col-sm-1 control-label">Descrição:</label>
+     		<div class="col-sm-5">
+     			<textarea id="descricao" name="procedimento.descricao" class="form-control" rows="4">
+     				${procedimento.descricao}
+     			</textarea>
+     		</div>	
+		</div>
+		<div class="form-group">
+    		<div class="col-sm-offset-5">
+				<button type="submit" class="btn btn-success" 
+					style="padding-left: 30px; padding-right: 30px;">Enviar</button>
+			</div>
+		</div>		
 	</form>
 
 </body>
