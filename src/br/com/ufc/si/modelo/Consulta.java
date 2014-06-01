@@ -28,10 +28,11 @@ public class Consulta {
 	@OneToOne
 	@JoinColumn(name = "cliente_id")
 	private Cliente cliente;
-	@Column(name="horario_inicial")
 	private String hora;
 	@Temporal(TemporalType.DATE)
 	private Date dia;
+	@Column(columnDefinition="boolean default false")
+	private boolean realizado;
 	
 	public long getId() {
 		return id;
@@ -89,6 +90,14 @@ public class Consulta {
 			e.printStackTrace();
 		}
 		this.dia = date;
+	}
+
+	public boolean isRealizado() {
+		return realizado;
+	}
+
+	public void setRealizado(boolean realizado) {
+		this.realizado = realizado;
 	}
 
 	@Override
