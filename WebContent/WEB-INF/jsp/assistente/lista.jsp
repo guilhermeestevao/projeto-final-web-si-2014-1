@@ -8,7 +8,8 @@
 </head>
 <body>
 
-	<table>
+	<h1 style="text-align: center; margin-bottom: 20px;">Lista de Assistentes</h1>
+	<table class="table table-striped" style="width: 60%; margin-left: 20%;">
 		<thead>
 			<tr>
 				<th>Nome</th>
