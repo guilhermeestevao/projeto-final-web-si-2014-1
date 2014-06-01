@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<legend>Data: ${consulta.dia}</legend>
-	<table>
+
+	<h1 style="text-align: center; margin-bottom: 20px;">Data: ${consulta.dia}</h1>
+	<table class="table table-striped" style="width: 60%; margin-left: 20%;">
 		<thead>
 			<tr>
 				<th>Paciente</th>
