@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<form class="form-horizontal" role="form" action="filtroConsultaResult" method="post"
+	<form class="form-horizontal" role="form" action="filtroConsultaResult" 
 		style="width: 90%; margin-left: 5%">
 		<div class="form-group">	
 			<label for="dia" class="col-sm-1 control-label">Início:</label> 

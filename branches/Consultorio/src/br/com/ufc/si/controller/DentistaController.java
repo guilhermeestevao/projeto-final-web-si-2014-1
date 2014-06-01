@@ -7,6 +7,7 @@ import br.com.caelum.vraptor.Result;
 import br.com.ufc.si.dao.AssistenteDAOHibernate;
 import br.com.ufc.si.dao.DentistaDAOHibernate;
 import br.com.ufc.si.modelo.Dentista;
+import br.com.ufc.si.util.Restrito;
 
 @Resource
 public class DentistaController {
@@ -22,6 +23,7 @@ public class DentistaController {
 		this.assistenteDao = assistenteDao;
 	}
 
+	@Restrito
 	public void formDentista(Long id) {
 		Dentista dentista;
 		if(id != null){
@@ -34,10 +36,12 @@ public class DentistaController {
 		/* ABRE O FORMULARIO */
 	}
 
+	@Restrito
 	public List<Dentista> lista() {
 		return dao.listar();
 	}
 
+	@Restrito
 	public void adiciona(Dentista dentista) {
 		if(dentista.getId() != 0){
 			dao.atualizar(dentista);
@@ -47,6 +51,7 @@ public class DentistaController {
 		result.redirectTo(this).lista();
 	}
 
+	@Restrito
 	public void remove(long id) {
 		Dentista dentista = dao.carregar(id);
 		dao.excluir(dentista);
