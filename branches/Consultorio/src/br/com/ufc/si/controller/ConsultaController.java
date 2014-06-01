@@ -76,6 +76,14 @@ public class ConsultaController {
 	}
 	
 	@Restrito
+	public void realizar(long id){
+		Consulta consulta = dao.carregar(id);
+		consulta.setRealizado(true);
+		dao.atualizar(consulta);
+		result.redirectTo(this).lista();
+	}
+	
+	@Restrito
 	public List<Consulta> consultasDoDia(){
 		return dao.consultasDoDia();
 	}

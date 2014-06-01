@@ -28,6 +28,9 @@
 						<td>${consulta.procedimento.nome}</td>
 						<td>${consulta.hora}</td>
 						<td><fmt:formatDate value="${consulta.dia}" pattern="dd/MM/yyyy" /></td>
+						<c:if test="${!consulta.realizado}">
+							<td><a href="realizar?id=${consulta.id}">Marcar como realizada</a></td>
+						</c:if>
 						<td><a href="formConsulta?id=${consulta.id}">Editar</a></td>
 						<td><a href="remove?id=${consulta.id}">Excluir</a></td>
 					</c:if>		
