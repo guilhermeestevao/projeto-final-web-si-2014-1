@@ -6,6 +6,7 @@ import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.ufc.si.dao.ProcedimentoDAOHibernate;
 import br.com.ufc.si.modelo.Procedimento;
+import br.com.ufc.si.util.Restrito;
 
 @Resource
 public class ProcedimentoController {
@@ -18,6 +19,7 @@ public class ProcedimentoController {
 		this.dao = dao;
 	}
 
+	@Restrito
 	public void formProcedimento(Long id){
 		Procedimento procedimento;
 		if(id != null){
@@ -28,6 +30,7 @@ public class ProcedimentoController {
 		result.include("procedimento", procedimento);
 	}
 	
+	@Restrito
 	public void adiciona(Procedimento procedimento){
 		if(procedimento.getId() != 0){
 			dao.atualizar(procedimento);
@@ -37,10 +40,12 @@ public class ProcedimentoController {
 		result.redirectTo(this).lista();
 	}
 	
+	@Restrito
 	public List<Procedimento> lista(){
 		return dao.listar();
 	}
 	
+	@Restrito
 	public void remove(Long id){
 		Procedimento procedimento = dao.carregar(id);
 		dao.excluir(procedimento);

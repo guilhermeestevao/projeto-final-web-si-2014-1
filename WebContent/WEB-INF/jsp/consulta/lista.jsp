@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +27,7 @@
 						<td>${consulta.dentista.nome} </td>
 						<td>${consulta.procedimento.nome}</td>
 						<td>${consulta.hora}</td>
-						<td>${consulta.dia}</td>
+						<td><fmt:formatDate value="${consulta.dia}" pattern="dd/MM/yyyy" /></td>
 						<td><a href="formConsulta?id=${consulta.id}">Editar</a></td>
 						<td><a href="remove?id=${consulta.id}">Excluir</a></td>
 					</c:if>		

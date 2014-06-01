@@ -11,6 +11,7 @@ import br.com.ufc.si.dao.DentistaDAOHibernate;
 import br.com.ufc.si.dao.ProcedimentoDAOHibernate;
 import br.com.ufc.si.modelo.Cliente;
 import br.com.ufc.si.modelo.Consulta;
+import br.com.ufc.si.util.Restrito;
 
 @Resource
 public class ConsultaController {
@@ -37,6 +38,7 @@ public class ConsultaController {
 		return daoCliente.buscarPorNome(nome);
 	}
 
+	@Restrito
 	public void formConsulta(Long id){
 		Consulta consulta;
 		if(id != null){
@@ -50,11 +52,12 @@ public class ConsultaController {
 		result.include("consulta", consulta);
 	}
 	
+	@Restrito
 	public List<Consulta> lista(){
 		return dao.listar();
 	}
 	
-	
+	@Restrito
 	public void adiciona(Consulta consulta){
 		if(consulta.getId() != 0){
 			dao.atualizar(consulta);
@@ -65,20 +68,24 @@ public class ConsultaController {
 		result.redirectTo(this).lista();
 	}
 	
+	@Restrito
 	public void remove(long id) {
 		Consulta consulta = dao.carregar(id);
 		dao.excluir(consulta);
 		result.redirectTo(this).lista();
 	}
 	
+	@Restrito
 	public List<Consulta> consultasDoDia(){
 		return dao.consultasDoDia();
 	}
 	
+	@Restrito
 	public void filtroConsulta(){		 
 		
 	}
 	
+	@Restrito
 	public List<Consulta> filtroConsultaResult(String inicio, String fim){
 		return dao.consultasDoDia(inicio, fim);
 	}

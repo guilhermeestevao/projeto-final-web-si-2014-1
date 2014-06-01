@@ -6,6 +6,7 @@ import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.ufc.si.dao.AdministradorDAOHibernate;
 import br.com.ufc.si.modelo.Administrador;
+import br.com.ufc.si.util.Restrito;
 
 @Resource
 public class AdministradorController {
@@ -18,6 +19,7 @@ public class AdministradorController {
 		this.dao = dao;
 	}
 
+	@Restrito
 	public void formAdministrador(Long id) {
 		Administrador administrador;
 		if(id != null){
@@ -29,10 +31,12 @@ public class AdministradorController {
 		/* ABRE O FORMULARIO */
 	}
 
+	@Restrito
 	public List<Administrador> lista(){
 		return dao.listar();
 	}
 
+	@Restrito
 	public void adiciona(Administrador administrador){
 		if(administrador.getId() != 0){
 			dao.atualizar(administrador);
@@ -42,6 +46,7 @@ public class AdministradorController {
 		result.redirectTo(this).lista();
 	}
 	
+	@Restrito
 	public void remove(long id){
 		Administrador adminstrador = dao.carregar(id);
 		dao.excluir(adminstrador);
