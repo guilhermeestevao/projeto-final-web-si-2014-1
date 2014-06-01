@@ -43,7 +43,7 @@
 		<div id="menu">
 		<c:if test="${usuarioBean.logado}">
 			<ul class="nav nav-tabs" style="margin-bottom: 50px;">  
-				<li><a href="#">Home</a></li>
+				<li><a href="<c:url value="/"/>">Home</a></li>
 			<c:if test="${usuarioBean.getInstanceof() == 'administrador'}">
    				 <li><a href="<c:url value="/administrador/formAdministrador "/>">Novo Administrador</a></li>
    				 <li><a href="<c:url value="/administrador/lista "/>">Ver administradores</a></li>
