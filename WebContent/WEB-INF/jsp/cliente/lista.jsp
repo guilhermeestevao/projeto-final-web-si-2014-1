@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +54,7 @@
 						<label>Cidade:</label> ${cliente.cidade} <br/>
 						<label>Estado:</label> ${cliente.estado} <br/>
 						<label>Sexo:</label> ${cliente.sexo} <br/>
-						<label>Data de Nascimento:</label> ${cliente.nascimento} <br/>
+						<label>Data de Nascimento:</label> <fmt:formatDate value="${cliente.nascimento}" pattern="dd/MM/yyyy" /> <br/>
 						<label>Telefone 1:</label> ${cliente.fone1} <br/>
 						<label>Telefone 2:</label> ${cliente.fone2} <br/>
 					</div>
