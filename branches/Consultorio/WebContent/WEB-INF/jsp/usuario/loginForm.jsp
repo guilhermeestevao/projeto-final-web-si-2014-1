@@ -8,10 +8,10 @@
 </head>
 <body>
 
-	<div class="jumbotron" style="width: 60%; margin-left: 20%; 
-		border-radius: 20px; -moz-border-radius: 20px;
-		 -webkit-border-radius: 20px; margin-bottom: 1%;">
-		<h1 style="margin-left:6%; font-size: 45px;">Efetue o Login</h1><br/>
+	<div class="jumbotron"
+		style="width: 60%; margin-left: 20%; border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; margin-bottom: 1%;">
+		<h1 style="margin-left: 6%; font-size: 45px;">Efetue o Login</h1>
+		<br />
 		<form class="form-horizontal" role="form"
 			action="<c:url value="/usuario/login"/>" method="post">
 			<div class="form-group">
@@ -30,13 +30,16 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-primary" 
-						style="padding-left: 30px; padding-right: 30px;">
-						Login
-					</button>
+					<button type="submit" class="btn btn-primary"
+						style="padding-left: 30px; padding-right: 30px;">Login</button>
 				</div>
 			</div>
 		</form>
+		<c:forEach var="error" items="${errors}">
+			<h3><span class="label label-warning" style="margin-left: 6%;">${error.message}</span></h3>
+		</c:forEach>
 	</div>
+
+
 </body>
 </html>
