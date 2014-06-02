@@ -26,14 +26,38 @@
 		<tbody>
 			<c:forEach items="${administradorList}" var="administrador">
 				<tr>
-					<td><a a data-toggle="modal" href="#infoAdicionais${administrador.id}">${administrador.nome}</a></td>
+					<td><a data-toggle="modal" href="#infoAdicionais${administrador.id}">${administrador.nome}</a></td>
 					<td>${administrador.email}</td>
 					<td><a href="formAdministrador?id=${administrador.id}">Editar</a></td>
-					<td><a href="remove?id=${administrador.id}">Excluir</a></td>
+					<td><a data-toggle="modal" href="#excluirModal${administrador.id}">Excluir</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	
+	<c:forEach items="${administradorList}" var="administrador">
+		<div class="modal fade" id="excluirModal${administrador.id}" tabindex="-1"
+			role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">Consultório Online</button>
+						<h4 class="modal-title">Excluir Administrador</h4>
+					</div>
+					<div class="modal-body">
+						<h3>Deseja realmente excluir o administrador ${administrador.nome}?</h3>
+					</div>
+					<div class="modal-footer">
+						<a href="remove?id=${administrador.id}" class="btn btn-primary">Excluir</a>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+	</c:forEach>
 	
 	<c:forEach items="${administradorList}" var="administrador">
 		<div class="modal fade" id="infoAdicionais${administrador.id}" tabindex="-1"
