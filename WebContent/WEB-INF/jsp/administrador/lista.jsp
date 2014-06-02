@@ -46,7 +46,7 @@
 						<h4 class="modal-title">Excluir Administrador</h4>
 					</div>
 					<div class="modal-body">
-						<h3>Deseja realmente excluir o administrador ${administrador.nome}?</h3>
+						<h3>Deseja realmente excluir o administrador: ${administrador.nome}?</h3>
 					</div>
 					<div class="modal-footer">
 						<a href="remove?id=${administrador.id}" class="btn btn-primary">Excluir</a>

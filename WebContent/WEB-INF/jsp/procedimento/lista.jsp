@@ -26,11 +26,35 @@
 				<tr>
 					<td><a data-toggle="modal" href="#infoAdicionais${procedimento.id}">${procedimento.nome}</a></td>
 					<td><a href="formProcedimento?id=${procedimento.id}">Editar</a></td>
-					<td><a href="remove?id=${procedimento.id}">Excluir</a></td>
+					<td><a data-toggle="modal" href="#excluirModal${procedimento.id}">Excluir</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	
+	<c:forEach items="${procedimentoList}" var="procedimento">
+		<div class="modal fade" id="excluirModal${procedimento.id}" tabindex="-1"
+			role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">Consultório Online</button>
+						<h4 class="modal-title">Excluir Procedimento</h4>
+					</div>
+					<div class="modal-body">
+						<h3>Deseja realmente excluir o Procedimento: ${procedimento.nome}?</h3>
+					</div>
+					<div class="modal-footer">
+						<a href="remove?id=${procedimento.id}" class="btn btn-primary">Excluir</a>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+	</c:forEach>
 
 	<c:forEach items="${procedimentoList}" var="procedimento">
 		<div class="modal fade" id="infoAdicionais${procedimento.id}" tabindex="-1"
