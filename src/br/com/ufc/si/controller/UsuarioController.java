@@ -32,9 +32,7 @@ public class UsuarioController {
 		Usuario carregado = dao.carrega(email, senha);
 		
 		if (carregado == null) {
-		      validator.add(
-		          new ValidationMessage("Login e/ou senha inválidos",
-		              "usuario.login"));
+			validator.add(new ValidationMessage("Deu tudo errado!","usuario.login"));
 		}
 		
 		validator.onErrorUsePageOf(UsuarioController.class).loginForm();

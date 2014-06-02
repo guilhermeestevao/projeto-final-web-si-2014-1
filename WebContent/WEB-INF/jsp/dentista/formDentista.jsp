@@ -13,7 +13,7 @@
 <body>
 	<h1 style="text-align: center; margin-bottom: 30px;">Adicionar Novo Dentista</h1>	
 		
-		<form class="form-horizontal" role="form" action="adiciona" method="post"
+		<form class="form-horizontal" name="form1" role="form" onsubmit="return VDentista();" action="adiciona" method="post"
 			style="width: 90%; margin-left: 5%;">
 			<input id="id" type="hidden" name="dentista.id" value="${dentista.id}" /> 
 			<div class="form-group">

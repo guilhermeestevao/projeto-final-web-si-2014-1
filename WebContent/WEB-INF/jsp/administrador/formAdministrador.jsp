@@ -9,7 +9,7 @@
 <body>
 		<h1 style="text-align: center; margin-bottom: 30px;">Adicionar Novo Administrador</h1>	
 		
-		<form class="form-horizontal" role="form" action="adiciona" method="post"
+		<form class="form-horizontal" name="form1" role="form" onsubmit="return VAdministrador();" action="adiciona" method="post"
 			style="width: 90%; margin-left: 5%">
 			<input id="id" type="hidden" name="administrador.id" value="${administrador.id}" /> 
 			<div class="form-group">
