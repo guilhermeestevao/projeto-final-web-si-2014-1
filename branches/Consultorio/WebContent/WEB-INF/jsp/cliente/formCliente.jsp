@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
     
@@ -30,12 +29,12 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="endereco" class="col-sm-1 control-label">EndereÃ§o:</label> 
+				<label for="endereco" class="col-sm-1 control-label">Endereço:</label> 
 				<div class="col-sm-3">
 					<input id="endereco" type="text" name="cliente.endereco" 
 						class="form-control" value="${cliente.endereco}"/> 
 				</div>
-				<label for="numero" class="col-sm-1 control-label">NÃºmero:</label> 
+				<label for="numero" class="col-sm-1 control-label">Número:</label> 
 				<div class="col-sm-1">
 					<input id="numero" type="text" name="cliente.numero" 
 						class="form-control" value="${cliente.numero}" /> 

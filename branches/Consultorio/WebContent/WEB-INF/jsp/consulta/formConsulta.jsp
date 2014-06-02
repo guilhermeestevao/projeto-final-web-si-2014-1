@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,7 +52,7 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="hora" class="col-sm-2 control-label" style="text-align: left;">Hor√°rio da consulta:</label> 
+			<label for="hora" class="col-sm-2 control-label" style="text-align: left;">Hor·rio da consulta:</label> 
 			<div class="col-sm-2">	
 				<input id="hora" type="time" name="consulta.hora" 
 					class="form-control" value="${consulta.hora}"  />

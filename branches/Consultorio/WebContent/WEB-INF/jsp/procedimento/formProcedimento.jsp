@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -19,14 +19,14 @@
 				<input id="nome" type="text" name="procedimento.nome" 
 					class="form-control" value="${procedimento.nome}"  /> 
 			</div>
-			<label for="nome" class="col-sm-3 control-label">Tempo mÃ©dio para o procedimento:</label> 
+			<label for="nome" class="col-sm-3 control-label">Tempo médio para o procedimento:</label> 
 			<div class="col-sm-2">
 				<input id="nome" type="time" name="procedimento.tempoMedio" 
 					class="form-control" value="${procedimento.tempoMedio}"  /> 
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="descricao" class="col-sm-1 control-label">DescriÃ§Ã£o:</label>
+			<label for="descricao" class="col-sm-1 control-label">Descrição:</label>
      		<div class="col-sm-5">
      			<textarea id="descricao" name="procedimento.descricao" class="form-control" rows="4">
      				${procedimento.descricao}

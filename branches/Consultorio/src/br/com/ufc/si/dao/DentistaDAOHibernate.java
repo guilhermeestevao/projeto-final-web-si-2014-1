@@ -50,5 +50,5 @@ public class DentistaDAOHibernate implements DentistaDAO{
 	public List<Dentista> listar() {
 		return this.session.createCriteria(Dentista.class).list();
 	}
-	
+		
 }

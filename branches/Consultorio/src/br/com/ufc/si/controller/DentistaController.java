@@ -32,7 +32,7 @@ public class DentistaController {
 			dentista = new Dentista();
 		}
 		result.include("dentista", dentista);
-		result.include("assistente", assistenteDao.listar());
+		result.include("assistente", assistenteDao.assistentesNaoAlocados());
 		/* ABRE O FORMULARIO */
 	}
 

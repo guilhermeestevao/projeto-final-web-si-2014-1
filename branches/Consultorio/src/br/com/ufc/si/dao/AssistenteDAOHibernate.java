@@ -1,9 +1,9 @@
 package br.com.ufc.si.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Query;
-
+import org.hibernate.Query;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -55,6 +55,20 @@ public class AssistenteDAOHibernate implements AssistenteDAO{
 	public List<Assistente> listar() {
 		// TODO Auto-generated method stub
 		return this.session.createCriteria(Assistente.class).list();
+	}
+	
+	public List<Assistente> assistentesNaoAlocados(){
+		
+		List<Assistente> naoAlocados = new ArrayList<Assistente>();
+		List<Assistente> alocados = listar();
+		
+		for (Assistente assistente : alocados) {
+			if(assistente.getDentista() == null){
+				naoAlocados.add(assistente);
+			}
+		}
+		
+		return naoAlocados;
 	}
 	
 }
