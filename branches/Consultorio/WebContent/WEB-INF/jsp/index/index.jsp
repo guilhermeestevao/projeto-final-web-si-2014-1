@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,7 +56,7 @@
 						<label>Cidade:</label> ${dentista.cidade} <br/>
 						<label>Estado:</label> ${dentista.estado} <br/>
 						<label>Sexo:</label> ${dentista.sexo} <br/>
-						<label>Data de Nascimento:</label> ${dentista.nascimento} <br/>
+						<label>Data de Nascimento:</label> <fmt:formatDate value="${dentista.nascimento}" pattern="dd/MM/yyyy" /> <br/>
 						<label>Telefone 1:</label> ${dentista.fone1} <br/>
 						<label>Telefone 2:</label> ${dentista.fone2} <br/>
 					</div>

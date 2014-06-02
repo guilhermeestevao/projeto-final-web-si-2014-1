@@ -54,7 +54,7 @@
 						<label>Cidade:</label> ${administrador.cidade} <br/>
 						<label>Estado:</label> ${administrador.estado} <br/>
 						<label>Sexo:</label> ${administrador.sexo} <br/>
-						<label>Data de Nascimento:</label> ${administrador.nascimento} <br/>
+						<label>Data de Nascimento:</label><fmt:formatDate value="${administrador.nascimento}" pattern="dd/MM/yyyy" /><br/>
 						<label>Telefone 1:</label> ${administrador.fone1} <br/>
 						<label>Telefone 2:</label> ${administrador.fone2} <br/>
 					</div>
