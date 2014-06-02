@@ -29,11 +29,35 @@
 					<td><a data-toggle="modal" href="#infoAdicionais${cliente.id}">${cliente.nome}</a></td>
 					<td>${cliente.email}</td>
 					<td><a href="formCliente?id=${cliente.id}">Editar</a></td>
-					<td><a href="remove?id=${cliente.id}">Excluir</a></td>
+					<td><a data-toggle="modal" href="#excluirModal${cliente.id}">Excluir</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>
 	</table>
+	
+	<c:forEach items="${clienteList}" var="cliente">
+		<div class="modal fade" id="excluirModal${cliente.id}" tabindex="-1"
+			role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">Consultório Online</button>
+						<h4 class="modal-title">Excluir Cliente</h4>
+					</div>
+					<div class="modal-body">
+						<h3>Deseja realmente excluir o cliente: ${cliente.nome}?</h3>
+					</div>
+					<div class="modal-footer">
+						<a href="remove?id=${cliente.id}" class="btn btn-primary">Excluir</a>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+	</c:forEach>
 	
 	<c:forEach items="${clienteList}" var="cliente">
 		<div class="modal fade" id="infoAdicionais${cliente.id}" tabindex="-1"
