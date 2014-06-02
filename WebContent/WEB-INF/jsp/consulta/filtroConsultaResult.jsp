@@ -32,7 +32,7 @@
 	%>
 
 	<h1 style="text-align: center; margin-bottom: 20px;"> Datas: De <%= formato.format(inicio.getTime())%>  até <%= formato.format(fim.getTime())%>  </h1>
-	<table class="table table-striped" style="width: 60%; margin-left: 20%;">
+	<table class="table table-striped" style="width: 80%; margin-left: 10%;">
 		<thead>
 			<tr>
 				<th>Paciente</th>
