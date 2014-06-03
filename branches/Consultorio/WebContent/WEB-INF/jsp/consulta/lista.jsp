@@ -56,10 +56,15 @@
 								<td>${consulta.hora}</td>
 								<td><fmt:formatDate value="${consulta.dia}"
 										pattern="dd/MM/yyyy" /></td>
-								<c:if test="${!consulta.realizado}">
-									<td><a href="realizar?id=${consulta.id}">Marcar como
+								<c:choose>
+									<c:when test="${!consulta.realizado}">
+										<td><a href="realizar?id=${consulta.id}">Marcar como
 											realizada</a></td>
-								</c:if>
+									</c:when>
+									<c:otherwise>
+										<td>Consulta realizada</a></td>
+									</c:otherwise>
+								</c:choose>
 								<td><a href="formConsulta?id=${consulta.id}">Editar</a></td>
 								<td><a data-toggle="modal" href="#excluirModal${consulta.id}">Excluir</a></td>
 							</c:if>
