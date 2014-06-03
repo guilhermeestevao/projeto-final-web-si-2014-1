@@ -12,6 +12,10 @@
 <title>Home</title>
 </head>
 <body>
+	<div align="center">
+		<img alt="Consultório Online" src="<c:url value="/resources/img/Dentista1.png"/>" 
+			width="200px" height="200px" align="top">
+	</div>	
 	<h1 style="text-align: center; font-size: 45px">Seja bem-vindo ao Consultório Online!</h1>
 	<h1 style="text-align: center;">Verifique nossos dentistas disponíveis</h1>
 	<table class="table table-striped" style="width: 60%; margin-left: 20%;">
