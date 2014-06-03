@@ -13,32 +13,40 @@
 		<h1 style="margin-left: 15%; font-size: 45px;">Efetue o Login</h1>
 		<br />
 		<form class="form-horizontal" role="form"
-			action="<c:url value="/usuario/login"/>" method="post" style="margin-left: 10%;">
+			action="<c:url value="/usuario/login"/>" method="post"
+			style="margin-left: 10%;">
 			<div class="form-group">
 				<label for="email" class="col-sm-2 control-label">Email:</label>
 				<div class="col-sm-8">
-					<input id="email" type="text" name="email" class="form-control"
-						placeholder="Email" />
+					<div class="input-group">
+						<span class="input-group-addon">@</span> <input id="email"
+							type="text" name="email" class="form-control" placeholder="Email" />
+					</div>
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="email" class="col-sm-2 control-label">Senha:</label>
 				<div class="col-sm-8">
-					<input id="senha" type="password" name="senha" class="form-control"
+					<div class="input-group">
+						<span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+						<input id="senha" type="password" name="senha" class="form-control"
 						placeholder="Senha" />
+					</div>	
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10" style="margin-top: 20px;">
 					<button type="submit" class="btn btn-primary"
-						style="padding-left: 30px; padding-right: 30px;">Login</button>
+						style="padding-left: 40px; padding-right: 40px;">Login</button>
 				</div>
 			</div>
 		</form>
 		<c:forEach var="error" items="${errors}">
-			<h3><span class="label label-warning" style="margin-left: 6%;">${error.message}</span></h3>
+			<h3>
+				<span class="label label-warning" style="margin-left: 6%;">${error.message}</span>
+			</h3>
 		</c:forEach>
-		</div>
+	</div>
 	</div>
 
 
