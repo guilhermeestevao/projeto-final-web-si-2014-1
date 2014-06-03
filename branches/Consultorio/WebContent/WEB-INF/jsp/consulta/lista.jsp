@@ -4,6 +4,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<script type="text/javascript"
+	src="<c:url value="/resources/js/bootstrap.js"/>"></script>
+<script type="text/javascript"
+	src="<c:url value="/resources/js/jquery-1.3.2.min.js"/>"></script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
@@ -55,13 +61,38 @@
 											realizada</a></td>
 								</c:if>
 								<td><a href="formConsulta?id=${consulta.id}">Editar</a></td>
-								<td><a href="remove?id=${consulta.id}">Excluir</a></td>
+								<td><a data-toggle="modal" href="#excluirModal${consulta.id}">Excluir</a></td>
 							</c:if>
 						</tr>
 					</c:otherwise>
 				</c:choose>
 			</c:forEach>
 		</tbody>
+		
+		<c:forEach items="${consultaList}" var="consulta">
+		<div class="modal fade" id="excluirModal${consulta.id}" tabindex="-1"
+			role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">Consultório Online</button>
+						<h4 class="modal-title">Excluir Consulta</h4>
+					</div>
+					<div class="modal-body">
+						<h3>Deseja realmente excluir a consulta de ${consulta.cliente.nome}?</h3>
+					</div>
+					<div class="modal-footer">
+						<a href="remove?id=${consulta.id}" class="btn btn-primary">Excluir</a>
+						<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+	</c:forEach>
+		
 	</table>
 </body>
 </html>
