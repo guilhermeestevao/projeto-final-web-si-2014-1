@@ -48,7 +48,7 @@
 		<ul>
 		</ul>
 	</div>
-	<div id="body" style="padding-top: 70px;" style="width: 20%;">
+	<div id="body" style="padding-top: 70px; margin-bottom: 70px;">
 		<div id="menu">
 		<c:if test="${usuarioBean.logado}">
 			<ul class="nav nav-tabs" style="margin-bottom: 50px;">  
