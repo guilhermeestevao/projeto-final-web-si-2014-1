@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<h1 style="text-align: center; margin-bottom: 30px;">Adicionar Novo Assistente</h1>	
+	<h1 style="text-align: center; margin-bottom: 30px;">Formulário de Assistente</h1>	
 		
 		<form class="form-horizontal" role="form" name="form1" onsubmit="return VAssistente();" action="adiciona" method="post" 
 			style="width: 90%; margin-left: 5%">
@@ -58,7 +58,7 @@
 				<label for="estado" class="col-sm-1 control-label">Estado:</label> 
 				<div class="col-sm-2">	
 					<input id="estado" type="text" name="assistente.estado"
-						class="form-control" value="${assistente.estado}" /> 
+						class="form-control" value="${assistente.estado}" maxlength="2"/> 
 				</div>
 				<label for="sexo" class="col-sm-1 control-label">Sexo:</label> 	
 				<c:choose>

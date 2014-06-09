@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<h1 style="text-align: center; margin-bottom: 30px;">Adicionar Novo Procedimento</h1>	
+	<h1 style="text-align: center; margin-bottom: 30px;">Formulário de Procedimento</h1>	
 		
 	<form class="form-horizontal" role="form" action="adiciona" method="post"
 		style="width: 90%; margin-left: 5%">
