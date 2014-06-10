@@ -43,7 +43,7 @@
 											realizada</a></td>
 								</c:if>
 								<td><a href="formConsulta?id=${consulta.id}">Editar</a></td>
-								<td><a href="remove?id=${consulta.id}">Excluir</a></td>
+								<td><a data-toggle="modal" href="#excluirModal${consulta.id}">Excluir</a></td>
 							</c:if>
 						</tr>
 					</c:when>
