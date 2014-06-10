@@ -24,7 +24,6 @@
 				<th>Dentista</th>
 				<th>Procedimento</th>
 				<th>Horário da consulta</th>
-				<th>Dia da consulta</th>
 			</tr>
 		</thead>
 		<tbody>
